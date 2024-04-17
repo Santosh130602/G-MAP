@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
-}
+@import url("~leaflet/dist/leaflet.css");
+.leaflet-container {
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  width: 100%;
+  height: 100vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search_box{
+  padding: 30px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: fixed;
+  bottom: 0px;
+  z-index: 999;
+
 }
 
-.App-link {
-  color: #61dafb;
+#search_input{
+  width: 350px;
+  height: 30px;
+  border-radius: 25px 0px 0px 25px ;
+  text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#search_button{
+  height: 35px;
+  /* width: 40px; */
+  border-radius:  0px 25px 25px 0px;
+}
+
+
+@media (max-width: 568px) {
+  #search_input {
+    max-width: 250px; 
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+
+
+
+
+
+.ref_btn{
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  z-index: 999;
+}
+.refresh_btn{
+  border: none;
+  background: transparent;
+}
+.refresh_btn img{
+  width: 30px;
+  height: 30px;
+  /* transform: rotate ? 'rotate(360deg)' : 'rotate(0deg)' */
+  
+  
+}
+.refresh_btn img:hover{
+  transform: rotateX('360deg');
+}
+.transformation {
+  transform: rotate(360deg) scale(1);
+  transition: transform 1s ease-in-out; /* Specify the transition property: transform, duration: 2s, timing function: ease */
+}
+
+.leaflet-marker-icon {
+  width: 50px; /* Adjust the width of the marker icon */
+  height: 50px; /* Adjust the height of the marker icon */
+}
+
+/* Add styles for marker popups */
+.leaflet-popup-content {
+  width: auto; /* Adjust the width of the popup content */
+  height: auto; /* Adjust the height of the popup content */
+  padding: 10px; /* Add padding to the popup content */
 }
